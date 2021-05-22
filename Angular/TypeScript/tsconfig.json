@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "outDir": "dist", //Aponta uma pasta para que o js seja salvo
+        "noEmitOnError": false, //com o true não gera o .js e com false (padrão), gera o .js mesmo com o warning/erro
+        "typeRoots": [ //Informa o caminho padrão dos types no modules. Pode não ser necessário, pois, algumas IDEs já fazem isso por padrão
+            "node_modules/@types"
+        ]
+    }
+}
