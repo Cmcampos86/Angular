@@ -1,0 +1,59 @@
+Comandos
+--------
++ Atualizar NPM: npm install npm@latest -g
++ Instalar o angular cli para executar comandos em linha de comando: npm install -g @angular/cli
++ Abre o VS pelo CMD direto da pasta: code .
++ Cria uma nova aplicação: ng new "Nome Aplicacao"
++ Executa aplicação: ng s
++ Executar app em ambiente de produção para entregar uma versão mais compacta: ng s -c production
+Detalhe: o comando ng s --prod era executado e houve break change de versão q fez com que esse comando fosse substituído por ng s -c production
++ Gerar o build da aplicação: ng b
+Cria a pasta dist para hospedar no servidor
++ Gerar o build da aplicação em prod: ng b -c production
++ Gerar um componente: ng generate component pasta/NomeComponente ou ng g c pasta/NomeComponente
++ Criar templates: ng generate ou ng g
++ Cria um module: ng g module "NomeModule"
++ Cria um serviço: ng g service "NomeServico"
++ Cria um novo projeto com o app.module: ng new "NomeProjeto" --no-standalone --routing --ssr=false
+  Foi necessário isso por conta da versão e para acompanhar o curso
+  https://cursos.alura.com.br/forum/topico-a-pasta-app-module-ts-nao-esta-sendo-criada-339095
++ Cria um novo projeto com pouca coisa: ng new --minimal -g "NomeProjeto"
+--minimal: como se fosse um projeto blank
+-g: não inclui arquivos do git
+
+Notas
+-----
++ Instalar Node: site
++ Extensions
+	Angular Console (NX Console)
+	Angular Snippets
+	Better Comments
+	Debugger for Chrome (JavaScript Debugger (Nightly))
+	GitLens - Git supercharged
+	npm (deprecated)
+	npm Intellisense
+	vscode-icons
++ Tomar cuidado com a instalação da Extension NX Console, pois, dependendo da versão ela pode alterar o nome dos comandos do CLI console. 
+    Utilizar uma versão mais antiga (ex: v17.3.0)
++ Modulos
+	+ declarations: componentes
+	+ imports: módulos
+	+ providers: serviços
++ Dentro do componente, podemos substituir templateUrl apontando um arquivo HTML ao inves e usar o template e colocar um código HTML dentro
++ No arquivo angular.json, podemos dizer o que pode ser acrescentado no momento em que vai criar o componente.
+  Utilizamos o código abaixo: 
+  "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        }
++ Pacote json server: npm i -g json-server
++ Corrige o erro Property '...' has no initializer and is not definitely assigned in the constructor. 
+	Deve colocar no tsconfig.json:  "strictPropertyInitialization": false,
++ De uma forma resumida, as observables são utilizadas sempre quando você imaginar uma situação em que você espera que seja feita o monitoramento 
+	de um determinado contexto (por exemplo: cadastro de um cliente). Porém ela por si só não teria sentido se não for implementado um subscribe, ou seja, 
+	este tem como papel de ouvinte e que fica aguardando qualquer "estímulo" em que uma observable possa retornar (no exemplo mencionado, a observable 
+	daria um sinal de que foi efetuado a inserção de um cliente, logo a parte interessada (subscribe) recebendo esse alerta, invocaria um método para 
+	exibir um "messageBox" exibindo uma mensagem de sucesso ao usuário...ou então, uma mensagem de erro se houver tratamento na resposta.
++ 
