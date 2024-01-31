@@ -20,6 +20,12 @@ Cria a pasta dist para hospedar no servidor
 + Cria um novo projeto com pouca coisa: ng new --minimal -g "NomeProjeto"
 --minimal: como se fosse um projeto blank
 -g: não inclui arquivos do git
++ Instala pacote de atualização: npm i npm-check-updates -g
++ Mostra o que tem de atualização de pacotes: ncu
++ Executa o atualizador de pacotes: ncu -u
++ Instala o modulos: npm i
++ Angular Ivy: compilador performático para criar o pacote em produção
+Incluir no tsconfig.json o "enableIvy": true em "angularCompilerOptions" e incluir no angular.json o "aot": true em "options" "architect"
 
 Notas
 -----
@@ -49,6 +55,7 @@ Notas
           "skipTests": true
         }
 + Pacote json server: npm i -g json-server
++ Executa o json server: json-server --watch produtos.json
 + Corrige o erro Property '...' has no initializer and is not definitely assigned in the constructor. 
 	Deve colocar no tsconfig.json:  "strictPropertyInitialization": false,
 + De uma forma resumida, as observables são utilizadas sempre quando você imaginar uma situação em que você espera que seja feita o monitoramento 
@@ -56,4 +63,7 @@ Notas
 	este tem como papel de ouvinte e que fica aguardando qualquer "estímulo" em que uma observable possa retornar (no exemplo mencionado, a observable 
 	daria um sinal de que foi efetuado a inserção de um cliente, logo a parte interessada (subscribe) recebendo esse alerta, invocaria um método para 
 	exibir um "messageBox" exibindo uma mensagem de sucesso ao usuário...ou então, uma mensagem de erro se houver tratamento na resposta.
-+ 
++ Registrar a configuração de região
+	import { registerLocaleData } from '@angular/common';
+	import localePt from '@angular/common/locales/pt';
+	registerLocaleData(localePt);
